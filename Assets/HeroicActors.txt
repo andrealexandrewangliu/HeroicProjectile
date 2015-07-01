@@ -1,0 +1,32 @@
+1 - Soldier   - Phalanx - Charge
+2 - EImouto   - Slow
+3 - Elf       - Shoot   - Rapid Fire
+4 - EOrc      - Backpush
+5 - Dwarf     - Speed Up - Rocket Strap
+6 - ESuccubus - Seal Movement - Imoutoplosion
+7 - Priest    - Reduce Attrition - Heal
+8 - EPirate   - Damage
+9 - Mage      - Homing  - Nova
+0 - EWarlock  - BEEEAAAAM!!!
+
+Soldier - City
+Imouto  - Farms
+Elf - Forest
+Orc - Plains
+Dwarf - Snowy Mountains
+Succubus - High Desert
+Priest - High Grasslands
+Pirate - High Sea
+Mage - High Battlefield
+Warlock - Sky
+
+1 - Birds
+2 - Birds
+3 - Bugs and Birds
+4 - Bugs and Birds
+5 - Birds and Wisps
+6 - Wisps and Dragons and Birds
+7 - Birds and Dragons
+8 - Birds and Dragons and Krakens
+9 - Dragons and Demons
+10 - Bucket Ton of demons

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{FF67DFD1-8D25-D35B-667A-491B0B9E11F1}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_0_2;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Scripts\DestroyInSeconds.cs" />
+     <Compile Include="Assets\Scripts\DestroyWhenTrue.cs" />
+     <Compile Include="Assets\Scripts\EnableInSeconds.cs" />
+     <Compile Include="Assets\Scripts\MusicBGMPlayer.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\Allies\Dwarf.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\Allies\Elf.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\Allies\Guard.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\Allies\Mage.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\Allies\PartyMember.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\Allies\Priest.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\Enemies\DazePlayer.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\Enemies\ImoutoStickToPlayer.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\Enemies\PlayerTargetable.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\Enemies\PushBack.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\Enemies\WarlockAI.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\General\Attack.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\General\BombAttack.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\General\DirectHoming.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\General\HorizontalHomingStrafing.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\General\RangedAttack.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\General\SpreadRangedAttack.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\General\TrailEffect.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\LimitedMoveToDestination2D.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\MoveToDestination2D.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\PlayEmote.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\Player.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\PlayerEffects\Daze.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\PlayerEffects\ExtraEngine.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\PlayerEffects\QuakeMovement.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\RotateOnce.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Actors\UniqueObject.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Background\BackgroundScroll.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\Background\SimpleBackgroundScroll.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\BaseGlobalStats.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\BottomSpawner.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\CumulativeSpawner.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\LevelGlobals.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\PauseAnimationSynchronizer.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\PlayerControls.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\TopSpawner.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\UI\ActionButtonUpdate.cs" />
+     <Compile Include="Assets\Scripts\PlayMap\UI\PowerCounter.cs" />
+     <Compile Include="Assets\Scripts\UITextToggleColor.cs" />
+     <None Include="Assets\HeroicActors.txt" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
