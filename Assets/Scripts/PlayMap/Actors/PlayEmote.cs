@@ -45,6 +45,11 @@ public class PlayEmote : MonoBehaviour {
 		Balloon.Play ("Question");
 	}
 	
+	public void NoEmote(){
+		Balloon.Play ("NoSprite");
+		Balloon.GetComponent<SpriteRenderer> ().sprite = null;
+	}
+	
 	// Update is called once per frame
 	void Update () {
 	

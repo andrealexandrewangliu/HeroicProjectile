@@ -46,6 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CutsceneAssets\Scene0\Scene0Script.cs" />
+     <Compile Include="Assets\Scripts\Cutscenes\ActorManager.cs" />
+     <Compile Include="Assets\Scripts\Cutscenes\CutsceneActorMovement.cs" />
+     <Compile Include="Assets\Scripts\Cutscenes\CutsceneMovetoDestination2D.cs" />
+     <Compile Include="Assets\Scripts\Cutscenes\CutscenePlayer.cs" />
+     <Compile Include="Assets\Scripts\Cutscenes\CutsceneTextbox.cs" />
      <Compile Include="Assets\Scripts\DestroyInSeconds.cs" />
      <Compile Include="Assets\Scripts\DestroyWhenTrue.cs" />
      <Compile Include="Assets\Scripts\EnableInSeconds.cs" />

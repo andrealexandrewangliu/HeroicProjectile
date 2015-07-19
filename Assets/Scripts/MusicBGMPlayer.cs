@@ -5,8 +5,8 @@ public class MusicBGMPlayer : MonoBehaviour {
 	public float TransitionTime;
 
 	private AudioSource AudioPlayer;
-	private AudioClip NextMusic = null;
-	private float TargetVolume = 0;
+	public AudioClip NextMusic = null;
+	public float TargetVolume = 0;
 
 	private float TransitionPerSec{
 		get{
@@ -15,18 +15,37 @@ public class MusicBGMPlayer : MonoBehaviour {
 	}
 	
 	public void PlayNow(AudioClip music){
+		init ();
 		AudioPlayer.clip = music;
 		AudioPlayer.Play();
 	}
 	
 	public void Play(AudioClip music){
+		init ();
 		NextMusic = music;
-		TargetVolume = AudioPlayer.volume;
+		if (TargetVolume == 0) {
+			if (NextMusic == null)
+				TargetVolume = -AudioPlayer.volume;
+			else
+				TargetVolume = AudioPlayer.volume;
+		} else {
+			if (AudioPlayer.volume <= 0){
+				AudioPlayer.clip = NextMusic;
+				AudioPlayer.Play();
+				NextMusic = null;
+			}
+		}
+	}
+
+	public void init(){
+		if (AudioPlayer == null) {
+			AudioPlayer = GetComponent<AudioSource> ();
+		}
 	}
 
 	// Use this for initialization
 	void Start () {
-		AudioPlayer = GetComponent<AudioSource> ();
+		init ();
 	}
 	
 	// Update is called once per frame
@@ -45,11 +64,24 @@ public class MusicBGMPlayer : MonoBehaviour {
 				}
 			}
 			else{
-				AudioPlayer.volume += Time.deltaTime * TransitionPerSec;
+				AudioPlayer.volume += volumeShift;
 				if (TargetVolume < AudioPlayer.volume){
 					AudioPlayer.volume = TargetVolume;
 					TargetVolume = 0;
 				}
+			}
+		}
+		else if (TargetVolume < 0) {
+			float volumeShift = Time.deltaTime * TransitionPerSec;
+			if (AudioPlayer.volume > 0){
+				AudioPlayer.volume += volumeShift;
+			}
+			else{
+				AudioPlayer.volume = 0;
+				AudioPlayer.clip = NextMusic;
+				AudioPlayer.Play();
+				NextMusic = null;
+				TargetVolume = -TargetVolume;
 			}
 		}
 	}
