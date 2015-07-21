@@ -1,12 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CutsceneAssets/Scene0/Scene0Script.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Cutscenes/CutsceneActorMovement.cs">
     <Files>
-      <File FileName="Assets/CutsceneAssets/Scene0/Scene0Script.cs" Line="150" Column="2" />
-      <File FileName="Assets/Scripts/Cutscenes/CutscenePlayer.cs" Line="26" Column="24" />
-      <File FileName="Assets/Scripts/Cutscenes/ActorManager.cs" Line="35" Column="27" />
-      <File FileName="Assets/Scripts/Cutscenes/CutsceneMovetoDestination2D.cs" Line="4" Column="65" />
-      <File FileName="Assets/Scripts/Cutscenes/CutsceneActorMovement.cs" Line="109" Column="5" />
+      <File FileName="Assets/CutsceneAssets/Scene0/Scene0Script.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Cutscenes/CutscenePlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Cutscenes/ActorManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Cutscenes/CutsceneMovetoDestination2D.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Cutscenes/CutsceneActorMovement.cs" Line="47" Column="2" />
+      <File FileName="Assets/Scripts/PlayMap/Actors/PlayEmote.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MusicBGMPlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayMap/LevelGlobals.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayMap/UI/ActionButtonUpdate.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayMap/BaseGlobalStats.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayMap/PlayerControls.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayMap/Actors/Player.cs" Line="20" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

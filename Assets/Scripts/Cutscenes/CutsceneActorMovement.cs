@@ -41,52 +41,58 @@ public class CutsceneActorMovement : MonoBehaviour {
 		JumpDirection = 1;
 	}
 
+
 	public void HideEmote(){
-		try{
-			EmotePlayer.NoEmote ();
-		}
-		catch(UnityException e){
-		}
+		if (EmotePlayer != null)
+			try{
+				EmotePlayer.NoEmote ();
+			}
+			catch(UnityException e){
+				Debug.Log(e);
+			}
 	}
 
 	public void PlayEmote(Emote emoteselect){
-		switch (emoteselect) {
-		case Emote.Suprised:
-			EmotePlayer.Suprised ();
-			break;
-		case Emote.Sleep:
-			EmotePlayer.Sleep ();
-			break;
-		case Emote.Idea:
-			EmotePlayer.Idea ();
-			break;
-		case Emote.Silence:
-			EmotePlayer.Silence ();
-			break;
-		case Emote.Frustration:
-			EmotePlayer.Frustration ();
-			break;
-		case Emote.SweatDrop:
-			EmotePlayer.SweatDrop ();
-			break;
-		case Emote.Angry:
-			EmotePlayer.Angry ();
-			break;
-		case Emote.Love:
-			EmotePlayer.Love ();
-			break;
-		case Emote.Happy:
-			EmotePlayer.Happy ();
-			break;
-		case Emote.Question:
-			EmotePlayer.Question ();
-			break;
-		}
+		if (EmotePlayer != null)
+			switch (emoteselect) {
+			case Emote.Suprised:
+				EmotePlayer.Suprised ();
+				break;
+			case Emote.Sleep:
+				EmotePlayer.Sleep ();
+				break;
+			case Emote.Idea:
+				EmotePlayer.Idea ();
+				break;
+			case Emote.Silence:
+				EmotePlayer.Silence ();
+				break;
+			case Emote.Frustration:
+				EmotePlayer.Frustration ();
+				break;
+			case Emote.SweatDrop:
+				EmotePlayer.SweatDrop ();
+				break;
+			case Emote.Angry:
+				EmotePlayer.Angry ();
+				break;
+			case Emote.Love:
+				EmotePlayer.Love ();
+				break;
+			case Emote.Happy:
+				EmotePlayer.Happy ();
+				break;
+			case Emote.Question:
+				EmotePlayer.Question ();
+				break;
+			}
 	}
 
 	// Use this for initialization
 	void Start () {
-		EmotePlayer = transform.FindChild ("Emote").gameObject.GetComponent<PlayEmote> ();
+		Transform EPlayer = transform.FindChild ("Emote");
+		if (EPlayer != null)
+			EmotePlayer = EPlayer.gameObject.GetComponent<PlayEmote> ();
 		SRenderer = GetComponent<SpriteRenderer>();
 		AnimatorController = GetComponent<Animator>();
 		Mover = GetComponent<MoveToDestination2D>();

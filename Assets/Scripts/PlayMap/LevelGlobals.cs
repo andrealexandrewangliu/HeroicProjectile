@@ -4,7 +4,7 @@ using System.Collections;
 public class LevelGlobals : MonoBehaviour {
 	public static int Stage = 1;
 	public static float Power = 2000;
-	public static float DistanceTraveled = 60000;
+	public static float DistanceTraveled = 0;
 	public static bool Paused = false;
 	public static LevelGlobals LocalGlobals;
 	public static float InvincibleTimer = 0;
