@@ -5,6 +5,8 @@ public class LevelGlobals : MonoBehaviour {
 	public static int Stage = 1;
 	public static float Power = 2000;
 	public static float DistanceTraveled = 0;
+	public static float MoneyEarned = 0;
+	public static float ScoreEarned = 0;
 	public static bool Paused = false;
 	public static LevelGlobals LocalGlobals;
 	public static float InvincibleTimer = 0;
@@ -45,6 +47,18 @@ public class LevelGlobals : MonoBehaviour {
 		}
 		else {
 			BGM.Play(StageMusic[index]);
+		}
+	}
+	public void SetStageBGMNow(int i){
+		int index = i - 1;
+		if (index < 0) {
+			return;
+		}
+		else if (index >= StageMusic.Length) {
+			BGM.PlayNow(StageMusic[StageMusic.Length-1]);
+		}
+		else {
+			BGM.PlayNow(StageMusic[index]);
 		}
 	}
 
@@ -119,11 +133,31 @@ public class LevelGlobals : MonoBehaviour {
 		BGHigh.UpdateLooping ();
 	}
 
+	public void SetStartLevel(){
+		int StartLevel = 1;
+		if (BaseGlobalStats.StartLevel > 0) {
+			StartLevel = BaseGlobalStats.StartLevel;
+		} else if (BaseGlobalStats.MaxLevel > 0) {
+			StartLevel = BaseGlobalStats.MaxLevel;
+		}
+		Stage = StartLevel;
+		DistanceTraveled = StartDistance ();
+		SetStageBGMNow (Stage);
+		AllySpawner.SpawnLevel = (Stage / 2) + (Stage % 2);
+		EnemySpawner.SpawnLevel = Stage / 2;
+		
+		BGNormal.ForceInit ();
+		BGHigh.ForceInit ();
+		BGNormal.UpdateLooping ();
+		BGHigh.UpdateLooping ();
+	}
+
 	// Use this for initialization
 	void Start () {
 		LocalGlobals = this;
 		Power = BaseGlobalStats.PlayerPower;
 		SetSpawners ();
+		SetStartLevel ();
 	}
 
 	public static void PowerDamage(float strength){
@@ -187,6 +221,34 @@ public class LevelGlobals : MonoBehaviour {
 		}
 	}
 
+	private float StartDistance(){
+		switch (Stage) {
+		case 1:
+			return 0;
+		case 2:
+			return 8000;
+		case 3:
+			return 25000;
+		case 4:
+			return 60000;
+		case 5:
+			return 150000;
+		case 6:
+			return 300000;
+		case 7:
+			return 1000000;
+		case 8:
+			return 2500000;
+		case 9:
+			return 5000000;
+		case 10:
+			return 7000000;
+		case 11:
+			return 10000000;
+		}
+		return 0;
+	}
+
 
 	void NoPauseUpdate(){
 		if (Paused)
@@ -196,37 +258,55 @@ public class LevelGlobals : MonoBehaviour {
 		powerLoss *= 1.0f - Priest.TotalPriestBonus;
 
 		DistanceTraveled += Power * deltaTime;
+		MoneyEarned += Power * deltaTime / 50;
+		ScoreEarned += Power * deltaTime;
 		NextLevelVerify ();
 
 		Power -=powerLoss * deltaTime;
 
 
 
-		if (Power < 0)
+		if (Power < 0) {
 			Power = 0;
-
-		BGNormal.ScrollSpeed = Power ;
-		BGHigh.ScrollSpeed = BGNormal.ScrollSpeed / 2.0f;
-		CloudsClose.ScrollSpeed = Power * 0.8f;
-		CloudsLower.ScrollSpeed = CloudsClose.ScrollSpeed / 2.0f ;
-
-		if (Power >= 1000) {
-			PorpulsionAlpha.a = 1;
+			InvincibleTimer = 0;
+			GameEnd ();
 		} else {
-			PorpulsionAlpha.a = Power / 1000;
-		}
+			BGNormal.ScrollSpeed = Power;
+			BGHigh.ScrollSpeed = BGNormal.ScrollSpeed / 2.0f;
+			CloudsClose.ScrollSpeed = Power * 0.8f;
+			CloudsLower.ScrollSpeed = CloudsClose.ScrollSpeed / 2.0f;
 
-		HeroPropulsionRenderer.color = PorpulsionAlpha;
+			if (Power >= 1000) {
+				PorpulsionAlpha.a = 1;
+			} else {
+				PorpulsionAlpha.a = Power / 1000;
+			}
 
-		if (InvincibleTimer > 0) {
-			InvincibleTimer -= deltaTime;
-			if (InvincibleTimer < 0)
-				InvincibleTimer = 0;
+			HeroPropulsionRenderer.color = PorpulsionAlpha;
+
+			if (InvincibleTimer > 0) {
+				InvincibleTimer -= deltaTime;
+				if (InvincibleTimer < 0)
+					InvincibleTimer = 0;
+			}
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		NoPauseUpdate ();
+	}
+
+	public void GameEnd(){
+		if (BaseGlobalStats.MaxLevel < Stage) {
+			BaseGlobalStats.MaxLevel = Stage;
+		}
+		BaseGlobalStats.Money += (int) Mathf.Ceil(MoneyEarned);
+		BaseGlobalStats.Score += (int) Mathf.Ceil(ScoreEarned);
+		MoneyEarned = 0;
+		ScoreEarned = 0;
+		BaseGlobalStats.SavePersistentData ();
+		PartyMember.ClearParty ();
+		Application.LoadLevel("Menu");
 	}
 }

@@ -6,6 +6,7 @@ public abstract class CutscenePlayer : MonoBehaviour {
 	public AudioClip[] Tracks;
 	public ActorManager[] ActorPlayer = new ActorManager[1];
 	public CutsceneTextbox Textbox;
+	public CutsceneEndTrigger EndTrigger;
 	protected float NextSceneInSeconds = 0;  
 	protected int SceneIndex = 0;
 
@@ -39,6 +40,9 @@ public abstract class CutscenePlayer : MonoBehaviour {
 	protected abstract void ProcessNextScene();
 
 	public void EndScene(){
+		if (EndTrigger != null) {
+			EndTrigger.CutsceneEnd ();
+		}
 		GameObject.Destroy (this.gameObject);
 	}
 

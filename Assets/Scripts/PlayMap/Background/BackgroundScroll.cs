@@ -16,29 +16,40 @@ public class BackgroundScroll : MonoBehaviour {
 	private int HeadBGIndex = 0;
 	private bool Transition = false;
 	private bool EndIsTail = false;
+	private bool IsInit = false;
 
 	public int NextBGIMGIndex{
 		get {
 			return this.StageOffset + LevelGlobals.Stage;
 		}
 	}
+	
+	public void ForceInit(){
+		IsInit = false;
+		Init ();
+	}
+
+	public void Init(){
+		if (!IsInit) {
+			if (NextBGIMGIndex >= 0 && NextBGIMGIndex < BackgroundImages.Length) {
+				foreach (GameObject bg in Backgrounds) {
+					bg.GetComponent<SpriteRenderer> ().sprite = BackgroundImages [NextBGIMGIndex];
+				}
+				EndBackground.GetComponent<SpriteRenderer> ().sprite = BackgroundEndImages [NextBGIMGIndex];
+			} else {
+				looping = false;
+				foreach (GameObject bg in Backgrounds) {
+					bg.GetComponent<SpriteRenderer> ().sprite = BackgroundImages [0];
+				}
+				EndBackground.GetComponent<SpriteRenderer> ().sprite = BackgroundEndImages [0];
+				//gameObject.SetActive(false);
+			}
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
-		if (NextBGIMGIndex >= 0 && NextBGIMGIndex < BackgroundImages.Length) {
-			foreach (GameObject bg in Backgrounds) {
-				bg.GetComponent<SpriteRenderer> ().sprite = BackgroundImages [NextBGIMGIndex];
-			}
-			EndBackground.GetComponent<SpriteRenderer> ().sprite = BackgroundEndImages [NextBGIMGIndex];
-		} 
-		else {
-			looping = false;
-			foreach (GameObject bg in Backgrounds) {
-				bg.GetComponent<SpriteRenderer> ().sprite = BackgroundImages [0];
-			}
-			EndBackground.GetComponent<SpriteRenderer> ().sprite = BackgroundEndImages [0];
-			//gameObject.SetActive(false);
-		}
+		Init ();
 	}
 
 	public void EndTransition(){

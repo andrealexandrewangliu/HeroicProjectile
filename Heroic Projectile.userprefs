@@ -1,19 +1,25 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Cutscenes/CutsceneActorMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HeroicActors.txt">
     <Files>
-      <File FileName="Assets/CutsceneAssets/Scene0/Scene0Script.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Cutscenes/CutscenePlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Cutscenes/ActorManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Cutscenes/CutsceneMovetoDestination2D.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Cutscenes/CutsceneActorMovement.cs" Line="47" Column="2" />
-      <File FileName="Assets/Scripts/PlayMap/Actors/PlayEmote.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MusicBGMPlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayMap/LevelGlobals.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayMap/UI/ActionButtonUpdate.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Persistent.js" Line="5" Column="2" />
+      <File FileName="Assets/Scripts/PlayMap/LevelGlobals.cs" Line="152" Column="27" />
+      <File FileName="Assets/Scripts/Title/TitleMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Menu/MenuScreenManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PlayMap/BaseGlobalStats.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayMap/PlayerControls.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayMap/Actors/Player.cs" Line="20" Column="3" />
+      <File FileName="Assets/Scripts/PlayMap/Actors/General/RangedAttack.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Cutscenes/CutsceneEndTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Cutscenes/CutscenePlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Menu/UpgradeItem.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Menu/UpgradeList.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayMap/Actors/Enemies/PushBack.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayMap/Actors/Enemies/WarlockAI.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayMap/UI/ActionButtonUpdate.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayMap/Actors/Allies/PartyMember.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayMap/Background/BackgroundScroll.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayMap/Background/SimpleBackgroundScroll.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ScreenResolution.cs" Line="11" Column="52" />
+      <File FileName="Assets/HeroicActors.txt" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
